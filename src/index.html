@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PPHU Kampol</title>
+    <link rel="stylesheet" href="scss/style.scss" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.0/dist/css/swiffy-slider.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/photoswipe/dist/photoswipe.css"
+    />
+    <script type="module" src="js/index.js" defer></script>
+  </head>
+  <body class="section" id="home-section">
+    <header class="header">
+      <nav class="menu">
+        <h1 class="logo"><span>PPHU</span> Kampol</h1>
+        <ul class="menu__item-list">
+          <li class="menu__item">
+            <a class="menu__link home-section" href="#home-section">Home</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link about-section" href="#about-section">O nas</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link offer-section" href="#offer-section">Oferta</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link products-section" href="#products-section"
+              >Produkty</a
+            >
+          </li>
+          <li class="menu__item">
+            <a class="menu__link contact-section" href="#contact-section"
+              >Kontakt</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="hamburger">
+        <div class="hamburger__bar1"></div>
+        <div class="hamburger__bar2"></div>
+        <div class="hamburger__bar3"></div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-introduction">
+        <div class="hero-introduction__content">
+          <h1 class="content-logo"><span>PPHU</span> Kampol</h1>
+          <h2 class="hero-introduction__main-text">
+            Oferujemy wyroby<br />
+            granitowe<br />
+            <span class="distinction">wysokiej jakości</span>
+          </h2>
+          <a href="#offer-section" class="hero-introduction__cta">OFERTA</a>
+          <svg
+            viewBox="0 0 24 202"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="hero-introduction__arrow"
+          >
+            <path
+              d="M10.9393 201.061C11.5251 201.646 12.4749 201.646 13.0607 201.061L22.6066 191.515C23.1924 190.929 23.1924 189.979 22.6066 189.393C22.0208 188.808 21.0711 188.808 20.4853 189.393L12 197.879L3.51472 189.393C2.92893 188.808 1.97919 188.808 1.3934 189.393C0.807612 189.979 0.807612 190.929 1.3934 191.515L10.9393 201.061ZM10.5 0L10.5 200H13.5L13.5 0L10.5 0Z"
+              fill="#585550"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="swiffy-slider slider-nav-autoplay slider-nav-animation slider-nav-animation-fadein slider-indicators-highlight slider-item-nogap slider-indicators-sm"
+        data-slider-nav-autoplay-interval="5000"
+      >
+        <ul class="slider-container">
+          <li class="slide">
+            <img src="./assets/images/slider/slide01.jpg" />
+          </li>
+          <li class="slide">
+            <img src="./assets/images/slider/slide02.jpg" />
+          </li>
+          <li class="slide">
+            <img src="./assets/images/slider/slide03.jpg" />
+          </li>
+          <li class="slide">
+            <img src="./assets/images/slider/slide04.jpg" />
+          </li>
+        </ul>
+        <div class="slider-indicators slider-indicators-round">
+          <button class="active"></button>
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="about-section">
+      <img class="about__img" src="./assets/images/stone_cutting.jpg" />
+      <div class="about__content">
+        <h3 class="about__title">O Nas</h3>
+        <h4 class="about__title2">
+          Kamieniarstwo PPHU KAMPOL<br />
+          Export Import Wacław Kasprzak
+        </h4>
+        <p class="about__text">
+          funkcjonuje na rynku od 1999 r., jednakże właściciel firmy działa w
+          branży już ponad 30 lat. Przez lata działalności wypracowaliśmy sobie
+          grono stałych klientów gwarancją konkurencyjnych cen, bardzo dobrą
+          jakością produktów i terminowością realizacji zleceń oraz dogodnymi
+          terminami płatności.
+        </p>
+        <p class="about__text">
+          Jesteśmy producentem wyrobów granitowych odznaczających się wysoką
+          wytrzymałością mechaniczną i niewrażliwością na czynniki
+          atmosferyczne, przy tym granit podatny jest na obróbkę. Cechy te
+          umożliwiają zastosowanie naszych produktów w drogownictwie (krawężniki
+          granitowe) jak i również we wszystkich elementach dekoracji
+          wewnętrznych (parapety granitowe , płyty posadzkowe granitowe, blaty
+          granitowe) i zewnętrznych (płyty chodnikowe granitowe, tarasowe).
+        </p>
+        <p class="about__text">
+          Do produkcji naszych wyrobów wykorzystujemy materiał ze złóż naszej
+          kopalni granitu, co gwarantuje konkurencyjną cenę i sprawną realizację
+          zleceń.
+        </p>
+      </div>
+    </section>
+
+    <section class="offer section" id="offer-section">
+      <img class="offer__img01" src="./assets/images/monument.png" />
+      <div class="offer__offer1">
+        <div class="offer__box">
+          <h3>Płyty posadzkowe</h3>
+          <p>
+            Produkujemy płyty posadzkowe do wykorzystania wewnątrz i na zewnątrz
+            w różnych wymiarach i fakturach (groszkowana, płomieniowana,
+            szlifowana i polerowana).
+          </p>
+        </div>
+      </div>
+
+      <img class="offern__img02" src="./assets/images/stone_plates.png" />
+
+      <div class="offer__offer2">
+        <div class="offer__box">
+          <h3>Produkujemy także:</h3>
+          <p>Krawężniki, oporniki granitowe oraz krawężniki łukowe.</p>
+          <p>
+            Parapety granitowe polerowane, blaty, schody, jak i również elementy
+            granitowe pod zamówienie.
+          </p>
+        </div>
+      </div>
+      <div class="offer__offer3">
+        <div class="offer__box">
+          <h3>Wyposażenie</h3>
+          <p>
+            Posiadamy bardzo dobrze wyposażony park maszynowy, pozwalający nam
+            na wykonywanie produktów w wysokiej jakości realizowane w
+            najkrótszym możliwym terminie.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="products section" id="products-section">
+      <h3 class="products__title">Nasze produkty</h3>
+      <div
+        class="pswp-gallery pswp-gallery--with-caption products__grid"
+        id="gallery--with-custom-caption"
+      >
+        <div class="pswp-gallery__item products__grid-item">
+          <a
+            href="assets/images/gallery/gallery01.jpg"
+            data-pswp-width="640"
+            data-pswp-height="480"
+            target="_blank"
+          >
+            <img src="assets/images/gallery/gallery01.jpg" alt="Caption 1" />
+          </a>
+        </div>
+
+        <div class="pswp-gallery__item products__grid-item">
+          <a
+            href="assets/images/gallery/gallery02.jpg"
+            data-pswp-width="640"
+            data-pswp-height="480"
+            target="_blank"
+          >
+            <img src="assets/images/gallery/gallery02.jpg" alt="Caption 2" />
+          </a>
+        </div>
+
+        <div class="pswp-gallery__item products__grid-item">
+          <a
+            href="assets/images/gallery/gallery03.jpg"
+            data-pswp-width="640"
+            data-pswp-height="480"
+            target="_blank"
+          >
+            <img src="assets/images/gallery/gallery03.jpg" alt="Caption 3" />
+          </a>
+        </div>
+
+        <div class="pswp-gallery__item products__grid-item">
+          <a
+            href="assets/images/gallery/gallery04.jpg"
+            data-pswp-width="640"
+            data-pswp-height="480"
+            target="_blank"
+          >
+            <img src="assets/images/gallery/gallery04.jpg" alt="Caption 4" />
+          </a>
+        </div>
+
+        <div class="pswp-gallery__item products__grid-item">
+          <a
+            href="assets/images/gallery/gallery05.jpg"
+            data-pswp-width="640"
+            data-pswp-height="480"
+            target="_blank"
+          >
+            <img src="assets/images/gallery/gallery05.jpg" alt="Caption 5" />
+          </a>
+        </div>
+
+        <div class="pswp-gallery__item products__grid-item">
+          <a
+            href="assets/images/gallery/gallery06.jpg"
+            data-pswp-width="640"
+            data-pswp-height="480"
+            target="_blank"
+          >
+            <img src="assets/images/gallery/gallery06.jpg" alt="Caption 6" />
+          </a>
+        </div>
+
+        <div class="pswp-gallery__item products__grid-item">
+          <a
+            href="assets/images/gallery/gallery07.jpg"
+            data-pswp-width="640"
+            data-pswp-height="480"
+            target="_blank"
+          >
+            <img src="assets/images/gallery/gallery07.jpg" alt="Caption 7" />
+          </a>
+        </div>
+
+        <div class="pswp-gallery__item products__grid-item">
+          <a
+            href="assets/images/gallery/gallery08.jpg"
+            data-pswp-width="640"
+            data-pswp-height="480"
+            target="_blank"
+          >
+            <img src="assets/images/gallery/gallery08.jpg" alt="Caption 8" />
+          </a>
+        </div>
+
+        <div class="pswp-gallery__item products__grid-item">
+          <a
+            href="assets/images/gallery/gallery09.jpg"
+            data-pswp-width="640"
+            data-pswp-height="480"
+            target="_blank"
+          >
+            <img src="assets/images/gallery/gallery09.jpg" alt="Caption 9" />
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

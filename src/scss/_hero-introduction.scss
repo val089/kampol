@@ -1,0 +1,54 @@
+@use './fonts';
+@use './mixins' as m;
+@use './colors' as c;
+
+.hero-introduction {
+  display: grid;
+  align-items: center;
+
+  &__content {
+    padding-left: 80px;
+
+    @include m.breakpoint-down('medium') {
+      padding: 30px 20px;
+    }
+  }
+
+  &__main-text {
+    font-size: 64px;
+    font-weight: fonts.$font-regular;
+    margin-bottom: 40px;
+
+    @include m.breakpoint-down('extra-large') {
+      font-size: 44px;
+    }
+
+    @include m.breakpoint-down('large') {
+      font-size: 28px;
+    }
+  }
+
+  &__cta {
+    background-color: c.$cta;
+    padding: 10px 50px;
+    color: c.$cta-color;
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background-color: c.$cta-hover;
+    }
+  }
+
+  &__arrow {
+    display: block;
+    width: 20px;
+    height: 150px;
+    margin-top: 35px;
+    margin-left: -10px;
+
+    @include m.breakpoint-down('medium') {
+      height: 120px;
+    }
+  }
+}

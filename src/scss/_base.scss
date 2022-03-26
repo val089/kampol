@@ -1,0 +1,46 @@
+@use './colors' as c;
+@use './fonts';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  color: c.$font-color1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+.distinction {
+  font-weight: fonts.$font-semiBold;
+  color: c.$font-color2;
+}

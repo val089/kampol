@@ -1,0 +1,14 @@
+@use './colors' as c;
+@use './mixins' as m;
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-color: c.$primary-color;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include m.breakpoint-down('small') {
+    grid-template-columns: 1fr;
+  }
+}

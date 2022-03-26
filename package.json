@@ -1,0 +1,25 @@
+{
+  "name": "kampol",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel",
+    "prebuild-dev": "rm -rf dist/*",
+    "build-dev": "parcel build ./src/index.html --no-minify --public-url ./",
+    "prebuild": "rm -rf dist/*",
+    "build": "parcel build ./src/index.html --public-url ./",
+    "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "photoswipe": "^5.2.0-beta.4",
+    "swiffy-slider": "^1.5.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.3.2",
+    "parcel": "^2.3.2"
+  }
+}

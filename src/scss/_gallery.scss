@@ -1,0 +1,20 @@
+.pswp__custom-caption {
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 16px;
+  color: #fff;
+  width: calc(100% - 32px);
+  max-width: 400px;
+  padding: 5px 10px;
+
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+}
+.pswp__custom-caption a {
+  color: #fff;
+  text-decoration: underline;
+}
+.hidden-caption-content {
+  display: none;
+}
