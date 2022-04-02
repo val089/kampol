@@ -44,3 +44,9 @@ textarea {
   font-weight: fonts.$font-semiBold;
   color: c.$font-color2;
 }
+
+.underlined-link {
+  text-decoration: underline;
+  color: c.$font-color1;
+  font-weight: fonts.$font-semiBold;
+}

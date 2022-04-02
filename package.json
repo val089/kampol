@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "source": "src/index.html",
-  "homepage": "https://val089.github.io/kampol/",
+  "homepage": "clea",
   "scripts": {
     "dev": "parcel",
     "build": "parcel build",
-    "predeploy": "rm -rf dist && parcel build --public-url ./",
+    "predeploy": "rm -rf dist && parcel build --no-source-maps --public-url ./",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],

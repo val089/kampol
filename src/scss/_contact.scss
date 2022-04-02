@@ -1,0 +1,145 @@
+@use './fonts';
+@use './mixins' as m;
+@use './colors' as c;
+
+.contact {
+  background-color: c.$primary-color;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 40px 20px;
+
+  &__title {
+    text-align: center;
+    font-size: 64px;
+    font-weight: fonts.$font-semiBold;
+    margin-bottom: 15px;
+
+    @include m.breakpoint-down('extra-large') {
+      font-size: 44px;
+    }
+
+    @include m.breakpoint-down('large') {
+      font-size: 38px;
+    }
+  }
+
+  &__content {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  &__phone-numbers {
+    padding-top: 20px;
+    text-align: center;
+
+    p {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    a {
+      font-weight: fonts.$font-semiBold;
+      color: c.$font-color1;
+    }
+  }
+
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    border: none;
+    border: 1px solid c.$input-border-color;
+    background-color: c.$primary-color;
+  }
+
+  textarea {
+    min-height: 200px;
+  }
+
+  .form-send-success {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-submit {
+    background-color: c.$cta;
+    padding: 10px 50px;
+    color: c.$cta-color;
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+
+    @include m.breakpoint-down('medium') {
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: c.$cta-hover;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form {
+    &__btn-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    input[type='text'].error,
+    input[type='email'].error,
+    textarea.error {
+      border-color: red;
+    }
+
+    .send-error {
+      display: inline-block;
+      padding: 1rem 2rem;
+      color: red;
+    }
+  }
+}
+
+.field-error {
+  color: red;
+  font-size: 12px;
+}
+
+.element-is-busy {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.element-is-busy::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-right-color: rgba(0, 0, 0, 0.7);
+  transform: translate(-50%, -50%) rotate(0deg);
+  content: '';
+  animation: rotateSingleLoading 0.3s infinite linear;
+  z-index: 10;
+}
+
+@keyframes rotateSingleLoading {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

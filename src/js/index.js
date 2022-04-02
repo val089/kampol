@@ -24,10 +24,8 @@ lightbox.on('uiRegister', function () {
             '.hidden-caption-content'
           );
           if (hiddenCaption) {
-            // get caption from element with class hidden-caption-content
             captionHTML = hiddenCaption.innerHTML;
           } else {
-            // get caption from alt attribute
             captionHTML = currSlideElement
               .querySelector('img')
               .getAttribute('alt');
@@ -41,13 +39,11 @@ lightbox.on('uiRegister', function () {
 
 lightbox.init();
 
-// SWIFFY SLIDER
 window.swiffyslider = swiffyslider;
 window.addEventListener('load', () => {
   window.swiffyslider.init();
 });
 
-// ADD ACTIVE CLASS ON SCROLL TO HEADER
 let scrollpos = window.scrollY;
 const header = document.querySelector('.header');
 const header_height = header.offsetHeight;
@@ -62,7 +58,6 @@ window.addEventListener('scroll', function () {
   }
 });
 
-// HAMBURGER MENU
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.menu');
 const links = menu.querySelectorAll('.menu__link');
@@ -73,7 +68,6 @@ const toggle = () => {
 hamburger.addEventListener('click', toggle);
 links.forEach((link) => link.addEventListener('click', toggle));
 
-//ADD ACTIVE ON SCROLL TO LINK MENU
 const sections = document.querySelectorAll('.section');
 window.addEventListener('scroll', () => {
   let current = '';
@@ -90,4 +84,118 @@ window.addEventListener('scroll', () => {
       link.classList.add('menu__link--active');
     }
   });
+});
+
+// FORM
+
+const form = document.querySelector('#contactForm');
+const inputs = form.querySelectorAll('input[required], textarea[required]');
+
+form.setAttribute('novalidate', true);
+
+const displayFieldError = function (elem) {
+  const fieldRow = elem.closest('.form-row');
+  const fieldError = fieldRow.querySelector('.field-error');
+  if (fieldError === null) {
+    const errorText = elem.dataset.error;
+    const divError = document.createElement('div');
+    divError.classList.add('field-error');
+    divError.innerText = errorText;
+    fieldRow.appendChild(divError);
+  }
+};
+
+const hideFieldError = function (elem) {
+  const fieldRow = elem.closest('.form-row');
+  const fieldError = fieldRow.querySelector('.field-error');
+  if (fieldError !== null) {
+    fieldError.remove();
+  }
+};
+
+[...inputs].forEach((elem) => {
+  elem.addEventListener('input', function () {
+    if (!this.checkValidity()) {
+      this.classList.add('error');
+    } else {
+      this.classList.remove('error');
+      hideFieldError(this);
+    }
+  });
+});
+
+const checkFieldsErrors = function (elements) {
+  let fieldsAreValid = true;
+
+  [...elements].forEach((elem) => {
+    if (elem.checkValidity()) {
+      hideFieldError(elem);
+      elem.classList.remove('error');
+    } else {
+      displayFieldError(elem);
+      elem.classList.add('error');
+      fieldsAreValid = false;
+    }
+  });
+
+  return fieldsAreValid;
+};
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  if (checkFieldsErrors(inputs)) {
+    const elements = form.querySelectorAll(
+      'input:not(:disabled), textarea:not(:disabled), select:not(:disabled)'
+    );
+
+    const dataToSend = new FormData();
+    [...elements].forEach((el) => dataToSend.append(el.name, el.value));
+
+    const url = form.getAttribute('action');
+    const method = form.getAttribute('method');
+
+    const submit = form.querySelector('[type="submit"]');
+    submit.disabled = true;
+    submit.classList.add('element-is-busy');
+
+    fetch(url, {
+      method: method.toUpperCase(),
+      body: dataToSend,
+    })
+      .then((ret) => ret.json())
+      .then((ret) => {
+        submit.disabled = false;
+        submit.classList.remove('element-is-busy');
+
+        if (ret.errors) {
+          ret.errors.map(function (el) {
+            return '[name="' + el + '"]';
+          });
+          const selector = ret.errors.join(',');
+          checkFieldsErrors(form.querySelectorAll(selector));
+        } else {
+          if (ret.status === 'ok') {
+            const div = document.createElement('div');
+            div.classList.add('form-send-success');
+            div.innerText = 'Wysłanie wiadomości się powiodło się';
+
+            form.parentElement.insertBefore(div, form);
+            div.innerHTML =
+              '<strong>Wiadomość została wysłana.</strong><span> Dziękujemy za kontakt. Postaramy się odpowiedzieć jak najszybciej.</span>';
+            form.reset();
+          }
+
+          if (ret.status === 'error') {
+            const div = document.createElement('div');
+            div.classList.add('send-error');
+            div.innerText = 'Wysłanie wiadomości się nie powiodło';
+          }
+        }
+      })
+      .catch((_) => {
+        submit.disabled = false;
+        submit.classList.remove('element-is-busy');
+      });
+  }
 });

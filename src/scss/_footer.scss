@@ -1,0 +1,31 @@
+@use './mixins' as m;
+@use './colors' as c;
+@use './fonts';
+
+.footer {
+  background-color: c.$primary-color;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  min-height: 350px;
+
+  &__content {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  &__logo {
+    font-size: 34px;
+    font-weight: fonts.$font-regular;
+    color: c.$logo-color2;
+
+    span {
+      color: c.$logo-color1;
+      font-weight: fonts.$font-bold;
+    }
+  }
+
+  p {
+    margin: 15px 0;
+  }
+}

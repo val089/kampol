@@ -17,20 +17,3 @@
     margin-bottom: 30px;
   }
 }
-
-.content-logo {
-  font-size: 24px;
-  font-weight: fonts.$font-regular;
-  color: c.$logo-color2;
-  display: none;
-  margin-bottom: 20px;
-
-  span {
-    color: c.$logo-color1;
-    font-weight: fonts.$font-bold;
-  }
-
-  @include m.breakpoint-down('medium') {
-    display: block;
-  }
-}
