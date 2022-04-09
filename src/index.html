@@ -4,10 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="title"
+      content="Kamieniarstwo PPHU KAMPOL Export Import Wacław Kasprzak"
+    />
+    <meta
+      name="description"
+      content="Jesteśmy producentem wyrobów granitowych odznaczających się wysoką wytrzymałością mechaniczną i niewrażliwością na czynniki atmosferyczne."
+    />
+    <meta
+      name="keywords"
+      content="pphu kampol, kamieniarstwo, obróbka granitu, granit, kopalnia granitu, płyty posadzkowe, krawężniki granitowe, oporniki granitowe, krawężniki łukowe granitowe, parapety granitowe, blaty granitow, schody granitowe, elementy granitowe, granitowe"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+
     <title>PPHU Kampol</title>
     <link rel="stylesheet" href="scss/style.scss" />
     <link
-      href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.0/dist/css/swiffy-slider.min.css"
+      href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.2/dist/css/swiffy-slider.min.css"
       rel="stylesheet"
       crossorigin="anonymous"
     />
@@ -19,6 +35,16 @@
       rel="stylesheet"
       href="../node_modules/photoswipe/dist/photoswipe.css"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.2/dist/js/swiffy-slider.min.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
     <script type="module" src="js/index.js" defer></script>
   </head>
   <body class="section" id="home-section">
@@ -30,20 +56,16 @@
             <a class="menu__link home-section" href="#home-section">Home</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link about-section" href="#about-section">O nas</a>
+            <a class="menu__link about-section" href="#about">O nas</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link offer-section" href="#offer-section">Oferta</a>
+            <a class="menu__link offer-section" href="#offer">Oferta</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link products-section" href="#products-section"
-              >Produkty</a
-            >
+            <a class="menu__link products-section" href="#products">Produkty</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link contact-section" href="#contact-section"
-              >Kontakt</a
-            >
+            <a class="menu__link contact-section" href="#contact">Kontakt</a>
           </li>
         </ul>
       </nav>
@@ -85,25 +107,25 @@
         <ul class="slider-container">
           <li class="slide">
             <img
-              src="./assets/images/slider/slide01.jpg"
+              src="./assets/images/slider/slide01.avif"
               alt="Zdjęcie ukazujące kopalnie PPHU Kampol, gdzie pozyskujemy granit."
             />
           </li>
           <li class="slide">
             <img
-              src="./assets/images/slider/slide02.jpg"
+              src="./assets/images/slider/slide02.avif"
               alt="Zdjęcie placu ukazujące płyty granitowe."
             />
           </li>
           <li class="slide">
             <img
-              src="./assets/images/slider/slide03.jpg"
+              src="./assets/images/slider/slide03.avif"
               alt="Zdjęcie hali, gdzie jest obrabiany wielki blok granitowy."
             />
           </li>
           <li class="slide">
             <img
-              src="./assets/images/slider/slide04.jpg"
+              src="./assets/images/slider/slide04.avif"
               alt="Zdjęcie placu ukazujące płyty granitowe."
             />
           </li>
@@ -117,15 +139,12 @@
       </div>
     </section>
 
+    <div class="anchor" id="about"></div>
     <section class="about section" id="about-section">
-      <img
-        class="about__img"
-        src="./assets/images/stone_cutting.jpg"
-        alt="O Nas"
-      />
+      <img class="about__img" src="./assets/images/about.avif" alt="O Nas" />
       <div class="about__content">
-        <h3 class="about__title">O Nas</h3>
-        <h4 class="about__title2">
+        <h3 class="about__title" data-aos="fade-right">O Nas</h3>
+        <h4 class="about__title2" data-aos="fade-right">
           Kamieniarstwo PPHU KAMPOL<br />
           Export Import Wacław Kasprzak
         </h4>
@@ -153,14 +172,15 @@
       </div>
     </section>
 
+    <div class="anchor" id="offer"></div>
     <section class="offer section" id="offer-section">
       <img
         class="offer__img01"
-        src="./assets/images/monument.png"
+        src="./assets/images/monument-absolute.png"
         alt="Bloki granitowe"
       />
       <div class="offer__offer1">
-        <div class="offer__box">
+        <div class="offer__box" data-aos="fade-right">
           <h3>Płyty posadzkowe</h3>
           <p>
             Produkujemy płyty posadzkowe do wykorzystania wewnątrz i na zewnątrz
@@ -177,7 +197,7 @@
       />
 
       <div class="offer__offer2">
-        <div class="offer__box">
+        <div class="offer__box" data-aos="fade-left">
           <h3>Produkujemy także:</h3>
           <p>Krawężniki, oporniki granitowe oraz krawężniki łukowe.</p>
           <p>
@@ -187,7 +207,7 @@
         </div>
       </div>
       <div class="offer__offer3">
-        <div class="offer__box">
+        <div class="offer__box" data-aos="fade-up">
           <h3>Wyposażenie</h3>
           <p>
             Posiadamy bardzo dobrze wyposażony park maszynowy, pozwalający nam
@@ -198,8 +218,9 @@
       </div>
     </section>
 
+    <div class="anchor" id="products"></div>
     <section class="products section" id="products-section">
-      <h3 class="products__title">Nasze produkty</h3>
+      <h3 class="products__title" data-aos="fade-right">Nasze produkty</h3>
       <div
         class="pswp-gallery pswp-gallery--with-caption products__grid"
         id="gallery--with-custom-caption"
@@ -261,134 +282,120 @@
 
         <div class="pswp-gallery__item products__grid-item">
           <a
-            href="assets/images/gallery/gallery06.jpg"
+            href="assets/images/gallery/gallery06.avif"
             data-pswp-width="640"
             data-pswp-height="480"
             target="_blank"
           >
-            <img src="assets/images/gallery/gallery06.jpg" alt="Caption 6" />
+            <img src="assets/images/gallery/gallery06.avif" alt="Caption 6" />
           </a>
         </div>
 
         <div class="pswp-gallery__item products__grid-item">
           <a
-            href="assets/images/gallery/gallery07.jpg"
+            href="assets/images/gallery/gallery07.avif"
             data-pswp-width="640"
             data-pswp-height="480"
             target="_blank"
           >
-            <img src="assets/images/gallery/gallery07.jpg" alt="Caption 7" />
+            <img src="assets/images/gallery/gallery07.avif" alt="Caption 7" />
           </a>
         </div>
 
         <div class="pswp-gallery__item products__grid-item">
           <a
-            href="assets/images/gallery/gallery08.jpg"
+            href="assets/images/gallery/gallery08.avif"
             data-pswp-width="640"
             data-pswp-height="480"
             target="_blank"
           >
-            <img src="assets/images/gallery/gallery08.jpg" alt="Caption 8" />
+            <img src="assets/images/gallery/gallery08.avif" alt="Caption 8" />
           </a>
         </div>
 
         <div class="pswp-gallery__item products__grid-item">
           <a
-            href="assets/images/gallery/gallery09.jpg"
+            href="assets/images/gallery/gallery09.avif"
             data-pswp-width="640"
             data-pswp-height="480"
             target="_blank"
           >
-            <img src="assets/images/gallery/gallery09.jpg" alt="Caption 9" />
+            <img src="assets/images/gallery/gallery09.avif" alt="Caption 9" />
           </a>
         </div>
       </div>
     </section>
 
+    <div class="anchor" id="contact"></div>
     <section class="contact section" id="contact-section">
       <div class="contact__content">
-        <h3 class="contact__title">Kontakt</h3>
+        <h3 class="contact__title" data-aos="fade-up">Kontakt</h3>
         <form
-          id="contactForm"
           class="form"
+          id="contactForm"
           method="post"
-          action="send-script.php"
-          novalidate="true"
+          action="./send-script.php"
         >
-          <div class="form-group">
-            <div class="form-row">
-              <label for="name">Imię i nazwisko</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                data-error="Podaj imię i nazwisko"
-                pattern="[a-zA-ZąĄćĆęĘłŁńŃóÓśŚżŻŹŹ ]+"
-                required
-              />
-            </div>
+          <div class="form__row">
+            <label for="name">Imię i nazwisko*</label>
+            <input
+              type="text"
+              name="name"
+              required
+              pattern=".{3,}"
+              id="name"
+              data-error-text="Wypełnij to pole (min. 3 znaki)"
+            />
           </div>
-
-          <div class="form-group">
-            <div class="form-row">
-              <label for="email">E-mail</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                data-error="Wpisz poprawny email"
-                pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-                required
-              />
-            </div>
+          <div class="form__row">
+            <label for="email">Email*</label>
+            <input
+              type="email"
+              name="email"
+              required
+              id="email"
+              data-error-text="Wpisz poprawny email"
+            />
           </div>
-
-          <div class="form-group">
-            <div class="form-row">
-              <label for="field-tel">Telefon</label>
-              <input
-                type="text"
-                name="tel"
-                id="tel"
-                data-error="Podaj numer telefonu"
-                pattern="[0-9]+"
-                required
-              />
-            </div>
+          <div class="form__row">
+            <label for="telephone">Telefon*</label>
+            <input
+              type="number"
+              name="telephone"
+              pattern="[0-9]+"
+              required
+              id="telephone"
+              data-error-text="Podaj numer telefonu"
+            />
           </div>
-
-          <div class="form-group form-row">
-            <label for="message">Wiadomość</label>
+          <div class="form__row">
+            <label for="message">Wiadomość*</label>
             <textarea
               name="message"
-              data-error="Wpisz treść wiadomości"
-              id="message"
-              pattern=".+"
               required
+              data-error-text="Musisz wypełnić pole"
+              id="message"
             ></textarea>
           </div>
 
-          <div class="form-group form-row form__btn-container">
-            <button class="btn-submit" id="submit" type="submit" name="submit">
-              Wyślij
-            </button>
+          <span class="form-row honey-row">
+            <label for="honey"
+              >Jeżeli jesteś człowiekiem, nie wypełniaj tego pola</label
+            >
+            <input type="text" name="honey" />
+          </span>
+          <div class="form__submit-container">
+            <button type="submit" class="form__submit-btn">Wyślij</button>
           </div>
         </form>
 
         <div class="contact__phone-numbers">
           <p>tel. <a href="tel:+48768709124">76 870 91 24</a></p>
-          <p>fax <a>76 870 91 28</a></p>
+          <p>fax 76 870 91 28</p>
           <p>tel. kom. <a href="tel:+48601955183">601 955 183</a></p>
         </div>
       </div>
     </section>
-
-    <!-- <iframe
-      src="https://snazzymaps.com/embed/383750"
-      width="100%"
-      height="400px"
-      style="border: none"
-    ></iframe> -->
 
     <div class="mapouter">
       <div class="gmap_canvas" width="100%">

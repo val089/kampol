@@ -11,6 +11,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 html,
@@ -33,13 +35,6 @@ ul {
   list-style: none;
 }
 
-input,
-textarea {
-  &:focus {
-    outline: none;
-  }
-}
-
 .distinction {
   font-weight: fonts.$font-semiBold;
   color: c.$font-color2;
@@ -49,4 +44,10 @@ textarea {
   text-decoration: underline;
   color: c.$font-color1;
   font-weight: fonts.$font-semiBold;
+}
+
+div.anchor {
+  position: relative;
+  top: -70px;
+  visibility: hidden;
 }

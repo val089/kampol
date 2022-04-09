@@ -7,15 +7,25 @@
   height: 70px;
   width: 100%;
   position: fixed;
-  z-index: 2;
+  z-index: 1;
   top: 0;
   left: 0;
   background: transparent;
+
+  @include m.breakpoint-down('medium') {
+    height: 50px;
+    padding: 0;
+  }
 
   &--onscroll {
     background: c.$primary-color;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
     padding: 0 80px;
+
+    @include m.breakpoint-down('medium') {
+      background: transparent;
+      box-shadow: unset;
+    }
   }
 }
 
@@ -65,8 +75,8 @@
 
 .menu__link {
   font-size: 20px;
-  color: c.$font-color1;
-  font-weight: fonts.$font-semiBold;
+  color: c.$font-color4;
+  font-weight: fonts.$font-regular;
   position: relative;
   margin: 0 20px;
 

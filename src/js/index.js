@@ -1,7 +1,11 @@
-import { swiffyslider } from 'swiffy-slider';
 import PhotoSwipeLightbox from '../../node_modules/photoswipe/dist/photoswipe-lightbox.esm';
 import PhotoSwipe from '../../node_modules/photoswipe/dist/photoswipe.esm';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
+AOS.init();
+
+// PhotoSwipeLightbox
 const lightbox = new PhotoSwipeLightbox({
   gallery: '#gallery--with-custom-caption',
   children: '.pswp-gallery__item',
@@ -36,14 +40,9 @@ lightbox.on('uiRegister', function () {
     },
   });
 });
-
 lightbox.init();
 
-window.swiffyslider = swiffyslider;
-window.addEventListener('load', () => {
-  window.swiffyslider.init();
-});
-
+// ScrollPosition
 let scrollpos = window.scrollY;
 const header = document.querySelector('.header');
 const header_height = header.offsetHeight;
@@ -58,6 +57,7 @@ window.addEventListener('scroll', function () {
   }
 });
 
+// Hamburger
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.menu');
 const links = menu.querySelectorAll('.menu__link');
@@ -68,6 +68,7 @@ const toggle = () => {
 hamburger.addEventListener('click', toggle);
 links.forEach((link) => link.addEventListener('click', toggle));
 
+// SCROLL TO SECTION
 const sections = document.querySelectorAll('.section');
 window.addEventListener('scroll', () => {
   let current = '';
@@ -87,115 +88,129 @@ window.addEventListener('scroll', () => {
 });
 
 // FORM
+function removeFieldError(field) {
+  const errorText = field.nextElementSibling;
+  if (errorText !== null) {
+    if (errorText.classList.contains('form-error-text')) {
+      errorText.remove();
+    }
+  }
+}
+
+function createFieldError(field, text) {
+  removeFieldError(field);
+
+  const div = document.createElement('div');
+  div.classList.add('form-error-text');
+  div.innerText = text;
+  if (field.nextElementSibling === null) {
+    field.parentElement.appendChild(div);
+  } else {
+    if (!field.nextElementSibling.classList.contains('form-error-text')) {
+      field.parentElement.insertBefore(div, field.nextElementSibling);
+    }
+  }
+}
+
+function toggleErrorField(field, show) {
+  const errorText = field.nextElementSibling;
+  if (errorText !== null) {
+    if (errorText.classList.contains('form-error-text')) {
+      errorText.style.display = show ? 'block' : 'none';
+      errorText.setAttribute('aria-hidden', show);
+    }
+  }
+}
+
+function markFieldAsError(field, show) {
+  if (show) {
+    field.classList.add('field-error');
+  } else {
+    field.classList.remove('field-error');
+    toggleErrorField(field, false);
+  }
+}
 
 const form = document.querySelector('#contactForm');
-const inputs = form.querySelectorAll('input[required], textarea[required]');
+const inputs = form.querySelectorAll('[required]');
 
 form.setAttribute('novalidate', true);
 
-const displayFieldError = function (elem) {
-  const fieldRow = elem.closest('.form-row');
-  const fieldError = fieldRow.querySelector('.field-error');
-  if (fieldError === null) {
-    const errorText = elem.dataset.error;
-    const divError = document.createElement('div');
-    divError.classList.add('field-error');
-    divError.innerText = errorText;
-    fieldRow.appendChild(divError);
-  }
-};
+for (const el of inputs) {
+  el.addEventListener('input', (e) =>
+    markFieldAsError(e.target, !e.target.checkValidity())
+  );
+}
 
-const hideFieldError = function (elem) {
-  const fieldRow = elem.closest('.form-row');
-  const fieldError = fieldRow.querySelector('.field-error');
-  if (fieldError !== null) {
-    fieldError.remove();
-  }
-};
-
-[...inputs].forEach((elem) => {
-  elem.addEventListener('input', function () {
-    if (!this.checkValidity()) {
-      this.classList.add('error');
-    } else {
-      this.classList.remove('error');
-      hideFieldError(this);
-    }
-  });
-});
-
-const checkFieldsErrors = function (elements) {
-  let fieldsAreValid = true;
-
-  [...elements].forEach((elem) => {
-    if (elem.checkValidity()) {
-      hideFieldError(elem);
-      elem.classList.remove('error');
-    } else {
-      displayFieldError(elem);
-      elem.classList.add('error');
-      fieldsAreValid = false;
-    }
-  });
-
-  return fieldsAreValid;
-};
-
-form.addEventListener('submit', function (e) {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  if (checkFieldsErrors(inputs)) {
-    const elements = form.querySelectorAll(
-      'input:not(:disabled), textarea:not(:disabled), select:not(:disabled)'
-    );
+  let formErrors = false;
 
-    const dataToSend = new FormData();
-    [...elements].forEach((el) => dataToSend.append(el.name, el.value));
+  for (const el of inputs) {
+    removeFieldError(el);
+    el.classList.remove('field-error');
+
+    if (!el.checkValidity()) {
+      createFieldError(el, el.dataset.errorText);
+      el.classList.add('field-error');
+      formErrors = true;
+    }
+  }
+
+  if (!formErrors) {
+    const submit = form.querySelector('[type=submit]');
+    submit.disabled = true;
+    submit.classList.add('loading');
+
+    const formData = new FormData(form);
 
     const url = form.getAttribute('action');
     const method = form.getAttribute('method');
 
-    const submit = form.querySelector('[type="submit"]');
-    submit.disabled = true;
-    submit.classList.add('element-is-busy');
-
     fetch(url, {
-      method: method.toUpperCase(),
-      body: dataToSend,
+      method: method,
+      body: formData,
     })
-      .then((ret) => ret.json())
-      .then((ret) => {
-        submit.disabled = false;
-        submit.classList.remove('element-is-busy');
-
-        if (ret.errors) {
-          ret.errors.map(function (el) {
-            return '[name="' + el + '"]';
-          });
-          const selector = ret.errors.join(',');
-          checkFieldsErrors(form.querySelectorAll(selector));
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.errors) {
+          const selectors = res.errors.map((el) => `[name="${el}"]`);
+          const fieldsWithErrors = form.querySelectorAll(selectors.join(','));
+          for (const el of fieldsWithErrors) {
+            markFieldAsError(el, true);
+            toggleErrorField(el, true);
+          }
         } else {
-          if (ret.status === 'ok') {
+          if (res.status === 'ok') {
             const div = document.createElement('div');
             div.classList.add('form-send-success');
-            div.innerText = 'Wysłanie wiadomości się powiodło się';
+            div.innerText = 'Wysłanie wiadomości się nie powiodło';
 
             form.parentElement.insertBefore(div, form);
-            div.innerHTML =
-              '<strong>Wiadomość została wysłana.</strong><span> Dziękujemy za kontakt. Postaramy się odpowiedzieć jak najszybciej.</span>';
+            div.innerHTML = `
+                        <strong>Wiadomość została wysłana</strong>
+                        <span>Dziękujemy za kontakt. Postaramy się odpowiedzieć jak najszybciej</span>
+                    `;
+            form.remove();
             form.reset();
           }
+          if (res.status === 'error') {
+            const statusError = document.querySelector('.send-error');
+            if (statusError) {
+              statusError.remove();
+            }
 
-          if (ret.status === 'error') {
             const div = document.createElement('div');
             div.classList.add('send-error');
             div.innerText = 'Wysłanie wiadomości się nie powiodło';
+            submit.parentElement.appendChild(div);
           }
         }
       })
-      .catch((_) => {
+      .finally(() => {
         submit.disabled = false;
-        submit.classList.remove('element-is-busy');
+        submit.classList.remove('loading');
       });
   }
 });
