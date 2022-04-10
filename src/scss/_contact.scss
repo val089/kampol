@@ -125,14 +125,12 @@
 /* ---------------------------------------------------- */
 /* sukces wysyłania */
 /* ---------------------------------------------------- */
-.form-send-success,
 .form-send-error {
   font-family: sans-serif;
   padding: 3em;
   border: 1px solid #ddd;
 }
 
-.form-send-success strong,
 .form-send-error strong {
   display: block;
   font-size: 12px;
@@ -141,27 +139,11 @@
 }
 
 .form-send-success {
-  font-family: sans-serif;
   text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  border: 1px solid #eee;
-  color: #333;
-  padding: 10rem 0;
-  margin: 3rem auto;
-  max-width: 40rem;
-}
-
-.form-send-success strong {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.form-send-success span {
-  font-size: 1rem;
-  color: #888;
-  font-weight: normal;
-  display: block;
+  strong {
+    color: c.$font-color3;
+    font-size: 1rem;
+  }
 }
 
 .form .send-error {

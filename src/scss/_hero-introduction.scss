@@ -12,6 +12,7 @@
 
     @include m.breakpoint-down('medium') {
       padding: 30px 20px;
+      text-align: center;
     }
   }
 
@@ -67,7 +68,16 @@
     margin-left: -10px;
 
     @include m.breakpoint-down('medium') {
-      height: 120px;
+      display: none;
+    }
+  }
+
+  &__arrow-mobile {
+    display: none;
+    @include m.breakpoint-down('medium') {
+      display: block;
+      height: 30px;
+      margin: 3rem auto;
     }
   }
 }

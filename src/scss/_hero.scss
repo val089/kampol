@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  @include m.breakpoint-down('small') {
+  @include m.breakpoint-down('medium') {
     grid-template-columns: 1fr;
   }
 }

@@ -74,11 +74,11 @@
 }
 
 .menu__link {
-  font-size: 20px;
+  font-size: 1rem;
   color: c.$font-color4;
-  font-weight: fonts.$font-regular;
+  font-weight: fonts.$font-semiBold;
   position: relative;
-  margin: 0 20px;
+  margin: 0 1rem;
 
   @include m.breakpoint-down('medium') {
     color: c.$primary-color;
@@ -101,4 +101,21 @@
   left: 0;
   right: 0;
   opacity: 1;
+}
+
+.langWrap {
+  display: flex;
+  .lang-button {
+    margin: 0 5px;
+    border: none;
+    background: none;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    &--active {
+      border: 2px solid c.$font-color3;
+      border-radius: 50%;
+      background-color: c.$font-color3;
+    }
+  }
 }

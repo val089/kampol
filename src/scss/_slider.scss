@@ -2,7 +2,7 @@
 @use './mixins' as m;
 
 .swiffy-slider {
-  @include m.breakpoint-down('small') {
+  @include m.breakpoint-down('medium') {
     display: none !important;
   }
 }

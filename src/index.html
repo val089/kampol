@@ -53,19 +53,44 @@
         <h1 class="logo"><span>PPHU</span> Kampol</h1>
         <ul class="menu__item-list">
           <li class="menu__item">
-            <a class="menu__link home-section" href="#home-section">Home</a>
+            <a
+              class="menu__link home-section"
+              href="#home-section"
+              id="menuLink1"
+              >Home</a
+            >
           </li>
           <li class="menu__item">
-            <a class="menu__link about-section" href="#about">O nas</a>
+            <a class="menu__link about-section" href="#about" id="menuLink2"
+              >O nas</a
+            >
           </li>
           <li class="menu__item">
-            <a class="menu__link offer-section" href="#offer">Oferta</a>
+            <a class="menu__link offer-section" href="#offer" id="menuLink3"
+              >Oferta</a
+            >
           </li>
           <li class="menu__item">
-            <a class="menu__link products-section" href="#products">Produkty</a>
+            <a
+              class="menu__link products-section"
+              href="#products"
+              id="menuLink4"
+              >Produkty</a
+            >
           </li>
           <li class="menu__item">
-            <a class="menu__link contact-section" href="#contact">Kontakt</a>
+            <a class="menu__link contact-section" href="#contact" id="menuLink5"
+              >Kontakt</a
+            >
+          </li>
+          <li class="langWrap">
+            <button class="lang-button lang-button--active" language="pl">
+              <img src="./assets/images/poland.png" alt="Poland flag" />
+            </button>
+            </button>
+            <button class="lang-button" language="de">
+              <img src="./assets/images/germany.png" alt="Germany flag" />
+            </button>
           </li>
         </ul>
       </nav>
@@ -81,12 +106,17 @@
       <div class="hero-introduction">
         <div class="hero-introduction__content">
           <h1 class="hero-introduction__logo"><span>PPHU</span> Kampol</h1>
-          <h2 class="hero-introduction__main-text">
+          <h2 class="hero-introduction__main-text" id="mainText">
             Oferujemy wyroby<br />
             granitowe<br />
             <span class="distinction">wysokiej jakości</span>
           </h2>
-          <a href="#offer-section" class="hero-introduction__cta">OFERTA</a>
+          <a
+            href="#offer-section"
+            class="hero-introduction__cta"
+            id="mainButton"
+            >OFERTA</a
+          >
           <svg
             viewBox="0 0 24 202"
             fill="none"
@@ -98,6 +128,22 @@
               fill="#585550"
             />
           </svg>
+          <svg
+            class="hero-introduction__arrow-mobile"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 1000 1000"
+            enable-background="new 0 0 1000 1000"
+            xml:space="preserve"
+          >
+            <g>
+              <path
+                d="M979.7,247.7c-13.8-13.8-36.1-13.8-49.9,0L500,677.6L70.2,247.7c-13.8-13.8-36.1-13.8-49.9,0c-13.8,13.8-13.8,36.1,0,49.9l445.3,445.3l10.5,10.4c6.5,6,14.8,9.1,23.1,9.2c0.2,0,0.5,0,0.7,0c0.2,0,0.5,0,0.7,0c8.3-0.2,16.6-3.2,23.1-9.2l10.5-10.4l445.3-445.3C993.4,283.8,993.4,261.5,979.7,247.7z"
+              />
+            </g>
+          </svg>
         </div>
       </div>
       <div
@@ -107,25 +153,19 @@
         <ul class="slider-container">
           <li class="slide">
             <img
-              src="./assets/images/slider/slide01.avif"
+              src="./assets/images/slider/slide01.jpg"
               alt="Zdjęcie ukazujące kopalnie PPHU Kampol, gdzie pozyskujemy granit."
             />
           </li>
           <li class="slide">
             <img
-              src="./assets/images/slider/slide02.avif"
+              src="./assets/images/slider/slide02.jpg"
               alt="Zdjęcie placu ukazujące płyty granitowe."
             />
           </li>
           <li class="slide">
             <img
-              src="./assets/images/slider/slide03.avif"
-              alt="Zdjęcie hali, gdzie jest obrabiany wielki blok granitowy."
-            />
-          </li>
-          <li class="slide">
-            <img
-              src="./assets/images/slider/slide04.avif"
+              src="./assets/images/slider/slide03.jpg"
               alt="Zdjęcie placu ukazujące płyty granitowe."
             />
           </li>
@@ -134,28 +174,28 @@
           <button class="active"></button>
           <button></button>
           <button></button>
-          <button></button>
         </div>
       </div>
     </section>
 
     <div class="anchor" id="about"></div>
     <section class="about section" id="about-section">
-      <img class="about__img" src="./assets/images/about.avif" alt="O Nas" />
+      <img class="about__img" src="./assets/images/about.jpg" alt="O Nas" />
       <div class="about__content">
-        <h3 class="about__title" data-aos="fade-right">O Nas</h3>
-        <h4 class="about__title2" data-aos="fade-right">
+        <h3 class="about__title" data-aos="fade-right" id="aboutUsTitle">
+          O Nas
+        </h3>
+        <h4 class="about__title2" data-aos="fade-right" id="aboutUsSubTitle">
           Kamieniarstwo PPHU KAMPOL<br />
           Export Import Wacław Kasprzak
         </h4>
-        <p class="about__text">
-          funkcjonuje na rynku od 1999 r., jednakże właściciel firmy działa w
-          branży już ponad 30 lat. Przez lata działalności wypracowaliśmy sobie
-          grono stałych klientów gwarancją konkurencyjnych cen, bardzo dobrą
-          jakością produktów i terminowością realizacji zleceń oraz dogodnymi
-          terminami płatności.
+        <p class="about__text" id="aboutUs1">
+          działa w branży już ponad 30 lat. Przez lata działalności
+          wypracowaliśmy sobie grono stałych klientów gwarancją konkurencyjnych
+          cen, bardzo dobrą jakością produktów i terminowością realizacji
+          zleceń.
         </p>
-        <p class="about__text">
+        <p class="about__text" id="aboutUs2">
           Jesteśmy producentem wyrobów granitowych odznaczających się wysoką
           wytrzymałością mechaniczną i niewrażliwością na czynniki
           atmosferyczne, przy tym granit podatny jest na obróbkę. Cechy te
@@ -164,10 +204,10 @@
           wewnętrznych (parapety granitowe , płyty posadzkowe granitowe, blaty
           granitowe) i zewnętrznych (płyty chodnikowe granitowe, tarasowe).
         </p>
-        <p class="about__text">
-          Do produkcji naszych wyrobów wykorzystujemy materiał ze złóż naszej
-          kopalni granitu, co gwarantuje konkurencyjną cenę i sprawną realizację
-          zleceń.
+        <p class="about__text" id="aboutUs3">
+          Do produkcji naszych wyrobów wykorzystujemy materiał ze złóż
+          strzegomskiego granitu, co gwarantuje konkurencyjną cenę i sprawną
+          realizację zleceń.
         </p>
       </div>
     </section>
@@ -181,8 +221,8 @@
       />
       <div class="offer__offer1">
         <div class="offer__box" data-aos="fade-right">
-          <h3>Płyty posadzkowe</h3>
-          <p>
+          <h3 id="productTitle1">Płyty posadzkowe</h3>
+          <p id="productDescription1">
             Produkujemy płyty posadzkowe do wykorzystania wewnątrz i na zewnątrz
             w różnych wymiarach i fakturach (groszkowana, płomieniowana,
             szlifowana i polerowana).
@@ -198,18 +238,18 @@
 
       <div class="offer__offer2">
         <div class="offer__box" data-aos="fade-left">
-          <h3>Produkujemy także:</h3>
-          <p>Krawężniki, oporniki granitowe oraz krawężniki łukowe.</p>
-          <p>
-            Parapety granitowe polerowane, blaty, schody, jak i również elementy
+          <h3 id="productTitle2">Produkujemy także:</h3>
+          <p id="productDescription2">
+            Krawężniki, oporniki granitowe oraz krawężniki łukowe. Parapety
+            granitowe polerowane, blaty, schody, jak i również elementy
             granitowe pod zamówienie.
           </p>
         </div>
       </div>
       <div class="offer__offer3">
         <div class="offer__box" data-aos="fade-up">
-          <h3>Wyposażenie</h3>
-          <p>
+          <h3 id="productTitle3">Wyposażenie</h3>
+          <p id="productDescription3">
             Posiadamy bardzo dobrze wyposażony park maszynowy, pozwalający nam
             na wykonywanie produktów w wysokiej jakości realizowane w
             najkrótszym możliwym terminie.
@@ -220,7 +260,9 @@
 
     <div class="anchor" id="products"></div>
     <section class="products section" id="products-section">
-      <h3 class="products__title" data-aos="fade-right">Nasze produkty</h3>
+      <h3 class="products__title" data-aos="fade-right" id="ourProductsTitle">
+        Nasze produkty
+      </h3>
       <div
         class="pswp-gallery pswp-gallery--with-caption products__grid"
         id="gallery--with-custom-caption"
@@ -232,7 +274,7 @@
             data-pswp-height="480"
             target="_blank"
           >
-            <img src="assets/images/gallery/gallery01.jpg" alt="Caption 1" />
+            <img src="assets/images/gallery/gallery01.jpg" alt="Opis 1" />
           </a>
         </div>
 
@@ -243,7 +285,7 @@
             data-pswp-height="480"
             target="_blank"
           >
-            <img src="assets/images/gallery/gallery02.jpg" alt="Caption 2" />
+            <img src="assets/images/gallery/gallery02.jpg" alt="Opis 2" />
           </a>
         </div>
 
@@ -254,7 +296,7 @@
             data-pswp-height="480"
             target="_blank"
           >
-            <img src="assets/images/gallery/gallery03.jpg" alt="Caption 3" />
+            <img src="assets/images/gallery/gallery03.jpg" alt="Opis 3" />
           </a>
         </div>
 
@@ -265,7 +307,7 @@
             data-pswp-height="480"
             target="_blank"
           >
-            <img src="assets/images/gallery/gallery04.jpg" alt="Caption 4" />
+            <img src="assets/images/gallery/gallery04.jpg" alt="Opis 4" />
           </a>
         </div>
 
@@ -276,51 +318,51 @@
             data-pswp-height="480"
             target="_blank"
           >
-            <img src="assets/images/gallery/gallery05.jpg" alt="Caption 5" />
+            <img src="assets/images/gallery/gallery05.jpg" alt="Opis 5" />
           </a>
         </div>
 
         <div class="pswp-gallery__item products__grid-item">
           <a
-            href="assets/images/gallery/gallery06.avif"
+            href="assets/images/gallery/gallery06.jpg"
             data-pswp-width="640"
             data-pswp-height="480"
             target="_blank"
           >
-            <img src="assets/images/gallery/gallery06.avif" alt="Caption 6" />
+            <img src="assets/images/gallery/gallery06.jpg" alt="Opis 6" />
           </a>
         </div>
 
         <div class="pswp-gallery__item products__grid-item">
           <a
-            href="assets/images/gallery/gallery07.avif"
+            href="assets/images/gallery/gallery07.jpg"
             data-pswp-width="640"
-            data-pswp-height="480"
+            data-pswp-height="360"
             target="_blank"
           >
-            <img src="assets/images/gallery/gallery07.avif" alt="Caption 7" />
+            <img src="assets/images/gallery/gallery07.jpg" alt="Opis 7" />
           </a>
         </div>
 
         <div class="pswp-gallery__item products__grid-item">
           <a
-            href="assets/images/gallery/gallery08.avif"
+            href="assets/images/gallery/gallery08.jpg"
             data-pswp-width="640"
-            data-pswp-height="480"
+            data-pswp-height="640"
             target="_blank"
           >
-            <img src="assets/images/gallery/gallery08.avif" alt="Caption 8" />
+            <img src="assets/images/gallery/gallery08.jpg" alt="Opis 8" />
           </a>
         </div>
 
         <div class="pswp-gallery__item products__grid-item">
           <a
-            href="assets/images/gallery/gallery09.avif"
+            href="assets/images/gallery/gallery09.jpg"
             data-pswp-width="640"
-            data-pswp-height="480"
+            data-pswp-height="426"
             target="_blank"
           >
-            <img src="assets/images/gallery/gallery09.avif" alt="Caption 9" />
+            <img src="assets/images/gallery/gallery09.jpg" alt="Opis 9" />
           </a>
         </div>
       </div>
@@ -330,6 +372,7 @@
     <section class="contact section" id="contact-section">
       <div class="contact__content">
         <h3 class="contact__title" data-aos="fade-up">Kontakt</h3>
+        <div class="form-send-success"></div>
         <form
           class="form"
           id="contactForm"
@@ -337,7 +380,9 @@
           action="./send-script.php"
         >
           <div class="form__row">
-            <label for="name">Imię i nazwisko*</label>
+            <label for="name" id="nameAndSurname"
+              >Imię i nazwisko<span style="color: red">*</span></label
+            >
             <input
               type="text"
               name="name"
@@ -348,7 +393,7 @@
             />
           </div>
           <div class="form__row">
-            <label for="email">Email*</label>
+            <label for="email">Email<span style="color: red">*</span></label>
             <input
               type="email"
               name="email"
@@ -358,7 +403,9 @@
             />
           </div>
           <div class="form__row">
-            <label for="telephone">Telefon*</label>
+            <label for="telephone"
+              >Telefon<span style="color: red">*</span></label
+            >
             <input
               type="number"
               name="telephone"
@@ -369,7 +416,9 @@
             />
           </div>
           <div class="form__row">
-            <label for="message">Wiadomość*</label>
+            <label for="message" id="messageForm"
+              >Wiadomość<span style="color: red">*</span></label
+            >
             <textarea
               name="message"
               required
@@ -385,13 +434,14 @@
             <input type="text" name="honey" />
           </span>
           <div class="form__submit-container">
-            <button type="submit" class="form__submit-btn">Wyślij</button>
+            <button type="submit" class="form__submit-btn" id="sendMessage">
+              Wyślij
+            </button>
           </div>
         </form>
 
         <div class="contact__phone-numbers">
           <p>tel. <a href="tel:+48768709124">76 870 91 24</a></p>
-          <p>fax 76 870 91 28</p>
           <p>tel. kom. <a href="tel:+48601955183">601 955 183</a></p>
         </div>
       </div>
@@ -432,12 +482,12 @@
     <footer class="footer">
       <section class="footer__content">
         <h4 class="footer__logo"><span>PPHU</span> Kampol</h4>
-        <p>
+        <p id="companyNameFooter">
           Kamieniarstwo PPHU KAMPOL<br />
           Export Import Wacław Kasprzak
         </p>
         <address>
-          Konary 55,<br />
+          Konary ul.Parkowa 12,<br />
           55-340 Udanin<br />
           e-mail:
           <a href="mailto:kampol@autograf.pl" class="underlined-link"

@@ -1,5 +1,6 @@
 @use './colors' as c;
 @use './fonts';
+@use './mixins' as m;
 
 *,
 *::before,
@@ -50,4 +51,12 @@ div.anchor {
   position: relative;
   top: -70px;
   visibility: hidden;
+
+  @include m.breakpoint-down('medium') {
+    top: 0;
+  }
+}
+
+.slider-container {
+  overflow: hidden;
 }

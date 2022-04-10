@@ -40,15 +40,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <meta charset=\"utf-8\">
                     </head>
                     <body>
-                        <div> Imię i nazwisko: $name</div>
-                        <div> Email: <a href=\"mailto:$email\">$email</a> </div>
-                        <div> Telefon: $telephone</div>
-                        <div> Wiadomość: </div>
+                        <div><span style="font-weight: bold;">Imię i nazwisko:</span> $name</div>
+                        <div><span style="font-weight: bold;">Email:</span> <a href=\"mailto:$email\">$email</a> </div>
+                        <div><span style="font-weight: bold;">Telefon:</span> $telephone</div>
+                        <div><span style="font-weight: bold;">Wiadomość:</span> </div>
                         <div> $message </div>
                     </body>
                 </html>";
 
-            if (mail($mailToSend, "Wiadomość ze strony - " . date("d-m-Y"), $message, $headers)) {
+            if (mail($mailToSend, "Wiadomość ze strony - kampol-kasprzak.com.pl" . date("d-m-Y"), $message, $headers)) {
                 $return["status"] = "ok";
             } else {
                 $return["status"] = "error";
