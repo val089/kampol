@@ -15,7 +15,9 @@ Open [http://localhost:1234](http://localhost:1234) with your browser to see the
 ## Technologies
 
 - [JavaScript](https://nextjs.org/)
-- [Html](https://www.typescriptlang.org/)
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [SCSS](https://sass-lang.com/) 
+- [Parcel](https://parceljs.org/)
 
 ## Installation
 1. Clone this repo.
